@@ -14,7 +14,6 @@ const Contact = () => {
     lat: 41.6219555,
     lng: 2.6930781
   }
-  console.log('apikey', process.env.MAPS_APIKEY)
   return (
     <div>
       <SEO title="Contacte" />

@@ -1,10 +1,10 @@
 
 footer{
-    display: 'flex';
-    justify-content: 'center';
-    color: 'white';
-    background-color: 'black';
-    padding: '20px';
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #262626;
+    padding: 20px;
 }
 p{
     margin-bottom: 6px;
@@ -14,7 +14,70 @@ img{
     margin: 0px
 }
 
+#social-container{
+    display: flex;
+}
+
+
 .grid-container{
-    display: 'grid'; 
-    grid-template-columns: "300px 300px 300px 300px";
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    justify-items: center;
+}
+@media (max-width: 324px) {
+    h4{
+        text-align: center;
+    }
+    .grid-container{
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+    #schedule-contaier{
+        display: block;
+        text-align: center;
+    }
+    
+    #schedule-big-field{
+    }
+    #contact{
+        text-align: center;
+    }
+    #social-container{
+        justify-content: center;
+    }
+}
+
+@media (min-width: 325px) and (max-width: 480px) {
+    h4{
+        text-align: center;
+    }
+    .grid-container{
+        display: grid; 
+        grid-template-columns: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+    }
+    #schedule-contaier{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+    
+    #schedule-big-field{
+        grid-column: span 2;
+        justify-self: center;
+    }
+    #contact{
+        text-align: center;
+    }
+    #social-container{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+
 }
