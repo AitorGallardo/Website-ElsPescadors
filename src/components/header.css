@@ -1,0 +1,41 @@
+li{
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+#menu-icon{
+    display: none;
+}
+
+.image-container{
+    max-width: 300px;
+    align-self: center;
+}
+
+ul{
+    margin: 0px;
+    align-self: center;
+    justify-self: end;
+}
+
+@media (max-width: 324px) {
+    nav{
+        display: grid;
+        grid-template-columns: 120px auto;
+    }
+
+    ul{
+        display: none;
+    }
+
+    #menu-icon{
+        display: block;
+        justify-self: end;
+        align-self: center;
+        margin: 10px;
+    }
+}
