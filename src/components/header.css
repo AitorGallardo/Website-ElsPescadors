@@ -3,12 +3,20 @@ li{
     margin-right: 1rem;
 }
 
+a:hover{
+    color: blue;
+}
+
 nav{
     display: grid;
     grid-template-columns: 300px auto;
 }
 #menu-icon{
     display: none;
+}
+
+#sidebar{
+    display: none !important
 }
 
 .image-container{
@@ -26,6 +34,42 @@ ul{
     nav{
         display: grid;
         grid-template-columns: 120px auto;
+    }
+
+    ul{
+        display: none;
+    }
+
+    #menu-icon{
+        display: block;
+        justify-self: end;
+        align-self: center;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 325px) and (max-width: 480px) {
+    nav{
+        display: grid;
+        grid-template-columns: 150px auto;
+    }
+
+    ul{
+        display: none;
+    }
+
+    #menu-icon{
+        display: block;
+        justify-self: end;
+        align-self: center;
+        margin: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    nav{
+        display: grid;
+        grid-template-columns: 180px auto;
     }
 
     ul{

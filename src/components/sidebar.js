@@ -10,8 +10,8 @@ import contact_icon from "../icons/navbar/contact_icon.svg"
 const ListLink = props => (
     <li >
         <Link to={props.to} style={{ display: `flex`, alignItems: 'center' }}>
-            <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="18px" height="18px" />
-            {props.children}
+            <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
+            <div style={{borderBottom: props.underline ? '2px solid black' : 'none'}}>{props.children}</div>
         </Link>
     </li>
 )
@@ -36,13 +36,18 @@ export default class SideBar extends React.Component {
 
     render() {
         return (
-            <Menu right isOpen={this.state.open} onStateChange={this.isMenuOpen}>
-
-                <ListLink to="/" icon_src={home_icon} icon_alt="Home Icon">Inici</ListLink>
-                <ListLink to="/about" icon_src={about_us_icon} icon_alt="About Icon">Nosaltes</ListLink>
-                <ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>
-                <ListLink to="/contact" icon_src={contact_icon} icon_alt="Contact Icon">Contacte</ListLink>
-            </Menu>
+            <div id="sidebar-cont">
+                <Menu right isOpen={this.state.open} onStateChange={this.isMenuOpen}>
+                {this.props.underline === "home" ? (<ListLink to="/" underline={true} icon_src={home_icon} icon_alt="Home Icon">Inici</ListLink>):
+                    (<ListLink to="/" icon_src={home_icon} icon_alt="Home Icon">Inici</ListLink>)}
+                {this.props.underline === "about" ? (<ListLink to="/about" underline={true} icon_src={about_us_icon} icon_alt="About Icon">Nosaltres</ListLink>):
+                    (<ListLink to="/about" icon_src={about_us_icon} icon_alt="About Icon">Nosaltres</ListLink>)}
+                {this.props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true} icon_src={menu_icon} icon_alt="Menu Icon">Menu</ListLink>):
+                    (<ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Menu</ListLink>)}
+                {this.props.underline === "contact" ? (<ListLink to="/contact" underline={true} icon_src={contact_icon} icon_alt="Contact Icon">Contact</ListLink>):
+                    (<ListLink to="/contact" icon_src={contact_icon} icon_alt="Contact Icon">Contact</ListLink>)}
+                </Menu>
+            </div>
         );
     }
 }

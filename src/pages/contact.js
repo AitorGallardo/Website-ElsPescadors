@@ -18,7 +18,7 @@ const Contact = () => {
   return (
     <div>
       <SEO title="Contacte" />
-      <Header />
+      <Header underline = "contact"/>
       <div>
         <GoogleMap address={address} googleMapsApiKey={process.env.MAPS_APIKEY} />
         <div className="info-container">

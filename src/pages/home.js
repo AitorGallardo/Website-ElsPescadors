@@ -27,7 +27,7 @@ const HomePage = () => {
   return (
     <div>
        <SEO title="Inici" />
-      <Header />
+      <Header underline = "home"/>
       <div>
         <Image />
       </div>
