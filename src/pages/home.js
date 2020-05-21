@@ -20,7 +20,7 @@ const Image = () => {
       }
     `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} style={{ height: '100vh' }}/>
 }
 
 const HomePage = () => {
