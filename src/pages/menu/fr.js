@@ -2,19 +2,34 @@ import React from "react"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 import SEO from "../../components/seo"
-import menu_FR from "../../images/menus/menu_FR.jpg"
+import { useStaticQuery, graphql } from "gatsby"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
 
-const MenuFr = () => (
+const MenuFr = () => {
+
+  const data = useStaticQuery(graphql`
+  query {
+    indexImage: file(relativePath: { eq: "menus/menu_FR.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1800) {
+          ...GatsbyImageSharpFluid 
+        }
+      }
+    }
+  }
+`)
+
+
+  return(
   <div>
     <SEO title="Carta" />
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
       <LanguageNav selected="fr"/>
       <ModalImage className="menu-image"
-        small={menu_FR}
-        large={menu_FR}
+        small={data.indexImage.childImageSharp.fluid.src}
+        large={data.indexImage.childImageSharp.fluid.src}
         hideZoom={true}
         alt="Menu"
       />
@@ -22,5 +37,6 @@ const MenuFr = () => (
     <Footer />
   </div>
 )
+}
 
 export default MenuFr
