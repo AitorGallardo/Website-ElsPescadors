@@ -1,14 +1,20 @@
 import React from "react"
-
-import Layout from "../../components/layout"
+import Header from "../../components/header"
+import Footer from "../../components/footer"
 import SEO from "../../components/seo"
+import carta_ENG from "../../assets/carta_ENG.pdf"
+
 
 const MenuEng = () => (
-  <Layout>
-    <SEO title="Menu" />
+  <div>
+    <SEO title="Carta" />
+    <Header underline="menu" />
     <h1>Menu</h1>
-    <p>This will be the menu in english</p>
-  </Layout>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <embed src={carta_ENG} width="800px" height="2100px" />
+    </div>
+    <Footer />
+  </div>
 )
 
 export default MenuEng
