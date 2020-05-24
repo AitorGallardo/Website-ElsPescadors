@@ -6,7 +6,7 @@ import menu_ESP_1 from "../../images/menus/menu_ESP_1.jpg"
 import menu_ESP_2 from "../../images/menus/menu_ESP_2.jpg"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
-import "./esp.css"
+
 
 const MenuEsp = () => (
   <div>
@@ -14,7 +14,7 @@ const MenuEsp = () => (
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav />
-      <div className="menu-pages-esp">
+      <div className="menu-pages">
         <ModalImage
           small={menu_ESP_1}
           large={menu_ESP_1}

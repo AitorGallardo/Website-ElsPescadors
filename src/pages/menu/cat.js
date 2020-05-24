@@ -6,7 +6,7 @@ import menu_CAT_1 from "../../images/menus/menu_CAT_1.jpg"
 import menu_CAT_2 from "../../images/menus/menu_CAT_2.jpg"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
-import "./cat.css"
+
 
 const MenuCat = () => (
   <div>
@@ -14,7 +14,7 @@ const MenuCat = () => (
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav />
-      <div className="menu-pages-cat">
+      <div className="menu-pages">
         <ModalImage
           small={menu_CAT_1}
           large={menu_CAT_1}

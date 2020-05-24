@@ -1,6 +1,14 @@
+.menu-pages {
+    display: flex;
+}
+
 @media (max-width: 324px) {
     .menu-image {
         height: calc(100vh - 114px);
+    }
+    .menu-pages {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -8,10 +16,18 @@
     .menu-image {
         height: calc(100vh - 132px);
     }
+    .menu-pages {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     .menu-image {
         height: calc(100vh - 143px);
+    }
+    .menu-pages {
+        display: flex;
+        flex-direction: column;
     }
 }
