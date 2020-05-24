@@ -15,7 +15,8 @@ const MenuDe = () => (
       <ModalImage className="menu-image"
         small={menu_DE}
         large={menu_DE}
-        alt="De Menu"
+        hideZoom={true}
+        alt="Speisekarte"
       />
     </div>
     <Footer />

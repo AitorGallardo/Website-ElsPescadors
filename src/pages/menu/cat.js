@@ -18,12 +18,14 @@ const MenuCat = () => (
         <ModalImage
           small={menu_CAT_1}
           large={menu_CAT_1}
-          alt="Cat Menu 1"
+          hideZoom={true}
+          alt="Carta 1/2"
         />
         <ModalImage
           small={menu_CAT_2}
           large={menu_CAT_2}
-          alt="Cat Menu 2"
+          hideZoom={true}
+          alt="Carta 2/2"
         />
       </div>
     </div>

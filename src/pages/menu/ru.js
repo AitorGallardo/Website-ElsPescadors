@@ -15,7 +15,8 @@ const MenuRu = () => (
       <ModalImage className="menu-image"
         small={menu_RU}
         large={menu_RU}
-        alt="Ru Menu"
+        hideZoom={true}
+        alt="меню"
       />
     </div>
     <Footer />

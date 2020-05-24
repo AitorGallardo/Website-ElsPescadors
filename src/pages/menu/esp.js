@@ -18,12 +18,14 @@ const MenuEsp = () => (
         <ModalImage
           small={menu_ESP_1}
           large={menu_ESP_1}
-          alt="Esp Menu 1"
+          hideZoom={true}
+          alt="Carta 1/2"
         />
         <ModalImage
           small={menu_ESP_2}
           large={menu_ESP_2}
-          alt="Esp Menu 2"
+          hideZoom={true}
+          alt="Carta 2/2"
         />
       </div>
     </div>
