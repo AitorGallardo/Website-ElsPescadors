@@ -1,0 +1,17 @@
+@media (max-width: 324px) {
+    .menu-image {
+        height: calc(100vh - 114px);
+    }
+}
+
+@media (min-width: 325px) and (max-width: 480px) {
+    .menu-image {
+        height: calc(100vh - 132px);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .menu-image {
+        height: calc(100vh - 143px);
+    }
+}

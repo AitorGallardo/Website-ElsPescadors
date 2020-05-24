@@ -12,7 +12,7 @@ const MenuIta = () => (
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
       <LanguageNav />
-      <ModalImage
+      <ModalImage className="menu-image"
         small={menu_ITA}
         large={menu_ITA}
         alt="Ita Menu"
