@@ -22,29 +22,30 @@ const LanguageNav = (props) => {
     return (
         <div className="nav-container">
             <nav className="languages-nav">
+                
                 <Link to="/menu/cat" className="link-icon">
-                    <img id="flag-icon" src={cat_flag} alt="Cat flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'cat' ? '2px solid dodgerblue' : 'none'}} src={cat_flag} alt="Cat flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/esp" className="link-icon">
-                    <img id="flag-icon" src={esp_flag} alt="Esp flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'esp' ? '2px solid dodgerblue' : 'none'}} src={esp_flag} alt="Esp flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/eng" className="link-icon">
-                    <img id="flag-icon" src={eng_flag} alt="Eng flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'eng' ? '2px solid dodgerblue' : 'none'}} src={eng_flag} alt="Eng flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/ita" className="link-icon">
-                    <img id="flag-icon" src={ita_flag} alt="Ita flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'ita' ? '2px solid dodgerblue' : 'none'}} src={ita_flag} alt="Ita flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/fr" className="link-icon">
-                    <img id="flag-icon"src={fr_flag} alt="Fr flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'fr' ? '2px solid dodgerblue' : 'none'}} src={fr_flag} alt="Fr flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/de" className="link-icon">
-                    <img id="flag-icon" src={de_flag} alt="De flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'de' ? '2px solid dodgerblue' : 'none'}} src={de_flag} alt="De flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/nl" className="link-icon">
-                    <img id="flag-icon" src={nl_flag} alt="Nl flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'nl' ? '2px solid dodgerblue' : 'none'}} src={nl_flag} alt="Nl flag" widt="32px" height="32px" />
                 </Link>
                 <Link to="/menu/ru" className="link-icon">
-                    <img id="flag-icon"src={ru_flag} alt="Ru flag" widt="32px" height="32px" />
+                    <img id="flag-icon" style={{borderRadius:'50px', border: props.selected === 'ru' ? '2px solid dodgerblue' : 'none'}} src={ru_flag} alt="Ru flag" widt="32px" height="32px" />
                 </Link>
             </nav>
         </div>

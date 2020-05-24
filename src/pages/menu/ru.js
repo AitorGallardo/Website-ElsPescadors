@@ -11,7 +11,7 @@ const MenuRu = () => (
     <SEO title="Carta" />
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
-      <LanguageNav />
+      <LanguageNav selected="ru"/>
       <ModalImage className="menu-image"
         small={menu_RU}
         large={menu_RU}

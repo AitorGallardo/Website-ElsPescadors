@@ -13,7 +13,7 @@ const MenuCat = () => (
     <SEO title="Carta" />
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <LanguageNav />
+      <LanguageNav selected="cat"/>
       <div className="menu-pages">
         <ModalImage
           small={menu_CAT_1}

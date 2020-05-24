@@ -11,7 +11,7 @@ const MenuDe = () => (
     <SEO title="Carta" />
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
-      <LanguageNav />
+      <LanguageNav selected="de"/>
       <ModalImage className="menu-image"
         small={menu_DE}
         large={menu_DE}

@@ -13,7 +13,7 @@ const MenuEsp = () => (
     <SEO title="Carta" />
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <LanguageNav />
+      <LanguageNav selected="esp"/>
       <div className="menu-pages">
         <ModalImage
           small={menu_ESP_1}
