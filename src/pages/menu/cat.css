@@ -1,0 +1,13 @@
+
+.menu-pages-cat {
+    display: flex;
+    flex-direction: row;
+
+}
+@media (max-width: 768px) {
+    .menu-pages-cat {
+        display: flex;
+        flex-direction: column;
+    
+    }
+}
