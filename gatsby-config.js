@@ -26,7 +26,7 @@ module.exports = {
         background_color: `#0080fc`,
         theme_color: `#0080fc`,
         display: `minimal-ui`,
-        icon: `src/images/test.png`, // This path is relative to the root of the site.
+        icon: `src/images/elspescadors-favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
