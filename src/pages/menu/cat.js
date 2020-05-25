@@ -14,7 +14,7 @@ const MenuCat = () => (
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="cat"/>
-      <div className="menu-pages">
+      <div>
         <ModalImage
           small={menu_CAT_1}
           large={menu_CAT_1}

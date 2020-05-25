@@ -20,7 +20,7 @@ const Footer = () => {
                     <div id="contact">
                         <h4>Dades de Contacte</h4>
                         <address id="contact">
-                            <p>932 000 000</p>
+                        <p>937 62 63 99</p>
                             <p>contactme@elspescadors.com</p>
                             <p>Platja, 08397 Pineda de Mar, Barcelona</p>
                         </address>

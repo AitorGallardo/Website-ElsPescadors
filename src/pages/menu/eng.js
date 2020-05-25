@@ -19,8 +19,6 @@ const MenuEng = () => {
       }
     }
 `)
-
-    console.log('imagen', data.indexImage.childImageSharp.fluid)
   return(
   <div>
     <SEO title="Carta" />

@@ -31,7 +31,7 @@ const Contact = () => {
             </div>
             <div>
               <h2>Com contactar</h2>
-              <p>932 000 000</p>
+              <p>937 62 63 99</p>
               <p>contactme@elspescadors.com</p>
             </div>
           </div>

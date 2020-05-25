@@ -3,7 +3,7 @@ require('dotenv').config({path: `./.env.${env}`});
 module.exports = {
   siteMetadata: {
     title: `Els Pescadors`,
-    description: `Restaurant located on the Costa Brava`,
+    description: `Mediterranean Restaurant`,
     author: `ElsPescadors`,
   },
   plugins: [
@@ -23,10 +23,10 @@ module.exports = {
         name: `Restaurant Els Pescadors Pineda de mar`,
         short_name: `Els Pescadors`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0080fc`,
+        theme_color: `#0080fc`,
         display: `minimal-ui`,
-        icon: `src/images/elspescadors-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/test.png`, // This path is relative to the root of the site.
       },
     },
     {

@@ -14,7 +14,7 @@ const MenuEsp = () => (
     <Header underline="menu" />
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="esp"/>
-      <div className="menu-pages">
+      <div>
         <ModalImage
           small={menu_ESP_1}
           large={menu_ESP_1}
