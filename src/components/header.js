@@ -8,7 +8,7 @@ import menu_icon from "../icons/menu_icon.svg"
 import SideBar from "./sidebar.js"
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid black' : 'none' }}>
+  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #0080fc' : 'none' }}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
