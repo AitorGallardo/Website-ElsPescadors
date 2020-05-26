@@ -23,6 +23,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-modal-image": "^2.5.0",
+    "react-scroll": "^1.7.16",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
     "typography-theme-noriega": "^0.16.19"

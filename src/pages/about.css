@@ -22,3 +22,16 @@
 .text-container{
     margin-left: 40px;
 }
+
+
+@media (max-width: 768px) {
+    .g_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 20px;
+    }
+    .about-image {
+        height: 50vh;
+    }
+}

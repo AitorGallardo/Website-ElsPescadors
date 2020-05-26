@@ -23,14 +23,11 @@ const About = (props) => {
 
     return (
         <div>
-            <div className="g_container">
+            <div className="g_container" id="about">
                 <BackgroundImage
                     className="about-image"
                     fluid={data.indexImage.childImageSharp.fluid}
                 >
-                    <div className="over">
-
-                    </div>
                 </BackgroundImage>
                 <div className="text-container">
                     <h1>Els Pescadors</h1>
