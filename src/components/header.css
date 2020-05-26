@@ -1,3 +1,9 @@
+.stickynav{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 li{
     display: inline-block;
     margin-right: 1rem;
