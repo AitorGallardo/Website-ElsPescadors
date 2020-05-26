@@ -44,8 +44,8 @@ const Header = (props) => {
     setSidebar(true);
   }
     return (
-      <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
-        <header className="sticky-inner" id="container" >
+      <div className={`sticky-container${isSticky ? ' sticky' : ''}`} ref={ref}>
+        <header className="sticky-content" id="container" >
           <SideBar id="sidebar" underline={props.underline} open={isSidebarOpen} onClickClose={(e)=> setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
           <nav>
             <Link to="/" style={{ textShadow: `none` }}>

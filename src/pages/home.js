@@ -10,7 +10,7 @@ import BackgroundImage from "gatsby-background-image"
 import About from "./about"
 import Contact from "./contact"
 import "./home.css"
-import Parent from "../components/testcomponents/parent"
+
 
 
 // const Image = () => {

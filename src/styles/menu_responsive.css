@@ -2,12 +2,12 @@
     display: flex;
 }
 
-.sticky-wrapper {
+.sticky-container {
     position: relative;
     height: 120px; /* We need to change this value */
 }
   
-.sticky .sticky-inner {
+.sticky .sticky-content {
     position: fixed;
     top: 0;
     left: 0;
