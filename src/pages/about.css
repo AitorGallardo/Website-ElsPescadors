@@ -1,6 +1,7 @@
 .g_container{
     display: flex;
     padding: 0px 20px;
+    height: 100vh;
 }
 .about-image {
     width: 100%;

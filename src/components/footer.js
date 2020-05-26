@@ -17,9 +17,9 @@ const Footer = () => {
                             <p id="schedule-big-field">Tots els dies de la setmana</p>
                         </div>
                     </div>
-                    <div id="contact">
+                    <div id="contact-footer">
                         <h4>Dades de Contacte</h4>
-                        <address id="contact">
+                        <address id="contact-footer">
                         <p>937 62 63 99</p>
                             <p>contactme@elspescadors.com</p>
                             <p>Platja, 08397 Pineda de Mar, Barcelona</p>

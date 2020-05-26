@@ -8,6 +8,7 @@ import Footer from "../components/footer"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import About from "./about"
+import Contact from "./contact"
 import "./home.css"
 
 
@@ -54,9 +55,11 @@ const HomePage = (props) => {
       >
         <div className="overlay">
           <Link style={{color:'white', backgroundColor: 'blue', cursor: 'pointer'}} to="about" smooth={true} duration={1000}> go to ABOUT</Link>
+          <Link style={{color:'white', backgroundColor: 'red', cursor: 'pointer'}} to="contact" smooth={true} duration={1000}> go to CONTACT</Link>
         </div>
       </BackgroundImage>
       <About />
+      <Contact />
       <Footer />
     </div>
 

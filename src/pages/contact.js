@@ -17,9 +17,7 @@ const Contact = () => {
   }
   return (
     <div>
-      <SEO title="Contacte" />
-      <Header underline = "contact"/>
-      <div>
+      <div id="contact">
         <GoogleMap address={address} googleMapsApiKey={process.env.GATSBY_MAPS_APIKEY} />
         <div className="info-container">
           <div className="info-grid">
@@ -37,7 +35,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
 
   );

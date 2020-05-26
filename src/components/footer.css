@@ -42,7 +42,7 @@ img{
     
     #schedule-big-field{
     }
-    #contact{
+    #contact-footer{
         text-align: center;
     }
     #social-container{
@@ -70,7 +70,7 @@ img{
         grid-column: span 2;
         justify-self: center;
     }
-    #contact{
+    #contact-footer{
         text-align: center;
     }
     #social-container{
