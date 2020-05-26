@@ -10,6 +10,7 @@ import BackgroundImage from "gatsby-background-image"
 import About from "./about"
 import Contact from "./contact"
 import "./home.css"
+import Parent from "../components/testcomponents/parent"
 
 
 // const Image = () => {
@@ -45,10 +46,8 @@ const HomePage = (props) => {
   return (
     <div>
       <SEO title="Inici" />
-      <Header underline="home" />
-      {/* <div>
-        <Image />
-      </div> */}
+      {/* <Header underline="home" /> */}
+      <Parent/>
       <BackgroundImage
         className="main-backgroundImage"
         fluid={data.indexImage.childImageSharp.fluid}

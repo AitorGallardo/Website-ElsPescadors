@@ -2,6 +2,31 @@
     display: flex;
 }
 
+.sticky-wrapper {
+    position: relative;
+    height: 3rem; /* We need to change this value */
+}
+  
+.sticky .sticky-inner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: red;
+    color: white;
+    animation: moveDown 0.5s ease-in-out;
+}
+
+@keyframes moveDown {
+    from {
+      transform: translateY(-5rem);
+    }
+    to {
+      transform: translateY(0rem);
+    }
+  }
+
 @media (max-width: 324px) {
     .menu-image {
         height: calc(100vh - 114px);
