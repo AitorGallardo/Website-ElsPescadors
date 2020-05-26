@@ -1,5 +1,5 @@
 
-import React from "react"
+import React, { Fragment, useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, Link, graphql } from "gatsby"
 import {Link as ReactScrollLink} from "react-scroll"
@@ -19,46 +19,52 @@ const ScrollLink = props => (
   </li>
 )
 
-class Header extends React.Component {
+const Header = (props) => {
+  const [isSticky, setSticky] = useState(false);
+  const [isSidebarOpen, setSidebar] = useState(false);
+  const ref = useRef(null);
+  const handleScroll = () => {
+  
+    if (ref.current) {
+      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= window.innerHeight);     
+    }
+  };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isSidebarOpen: false
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
     };
+  }, []);
+  
 
-    this.toggleChildMenu = this.toggleChildMenu.bind(this);
+  const toggleChildMenu = () => {    
+    setSidebar(true);
   }
-
-  toggleChildMenu() {
-    this.setState(state => ({
-      isSidebarOpen: true
-    }));
-  }
-  render() {
     return (
-      <div>
-        <header id="container">
-          <SideBar id="sidebar" underline={this.props.underline} open={this.state.isSidebarOpen} pageWrapId={"page-wrap"} outerContainerId={"container"} />
+      <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
+        <header className="sticky-inner" id="container" >
+          <SideBar id="sidebar" underline={props.underline} open={isSidebarOpen} onClickClose={(e)=> setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
           <nav>
             <Link to="/" style={{ textShadow: `none` }}>
               <div>
                 <Image name="elspescadors-icon.png" />
               </div>
             </Link>
-            <img onClick={this.toggleChildMenu} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
+            <img onClick={toggleChildMenu} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
             <ul>
-              {this.props.underline === "home" ? (<ListLink to="/" underline={true}>Inici</ListLink>):(<ListLink to="/">Inici</ListLink>)}
-              {this.props.underline === "about" ? (<ScrollLink to="about" underline={true}>Nosaltres</ScrollLink>):(<ScrollLink to="about">Nosaltres</ScrollLink>)}
-              {this.props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true}>Carta</ListLink>):(<ListLink to="/menu/cat">Carta</ListLink>)}
-              {this.props.underline === "contact" ? (<ScrollLink to="contact" underline={true}>Contacte</ScrollLink>):(<ScrollLink to="contact">Contacte</ScrollLink>)}
+              {props.underline === "home" ? (<ListLink to="/" underline={true}>Inici</ListLink>):(<ListLink to="/">Inici</ListLink>)}
+              {props.underline === "about" ? (<ScrollLink to="about" underline={true}>Nosaltres</ScrollLink>):(<ScrollLink to="about">Nosaltres</ScrollLink>)}
+              {props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true}>Carta</ListLink>):(<ListLink to="/menu/cat">Carta</ListLink>)}
+              {props.underline === "contact" ? (<ScrollLink to="contact" underline={true}>Contacte</ScrollLink>):(<ScrollLink to="contact">Contacte</ScrollLink>)}
             </ul>
           </nav>
         </header>
       </div>
     );
-  }
-
+  
 }
 
 

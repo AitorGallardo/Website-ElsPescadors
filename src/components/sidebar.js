@@ -39,6 +39,7 @@ export default class SideBar extends React.Component {
     }
     isMenuOpen = function (state) {
         if (!state.isOpen) {
+            this.props.onClickClose('lal');
             this.setState({ open: state.isOpen })
         }
     };

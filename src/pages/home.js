@@ -46,8 +46,7 @@ const HomePage = (props) => {
   return (
     <div>
       <SEO title="Inici" />
-      {/* <Header underline="home" /> */}
-      <Parent/>
+      <Header underline="home" />
       <BackgroundImage
         className="main-backgroundImage"
         fluid={data.indexImage.childImageSharp.fluid}
