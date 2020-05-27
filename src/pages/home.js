@@ -46,16 +46,18 @@ const HomePage = (props) => {
   return (
     <div>
       <SEO title="Inici" />
+      <div id="home-top-side">
       <Header underline="home" />
-      <BackgroundImage
-        className="main-backgroundImage"
-        fluid={data.indexImage.childImageSharp.fluid}
-      >
-        <div className="overlay">
-          <Link style={{color:'white', backgroundColor: 'blue', cursor: 'pointer'}} to="about" smooth={true} duration={1000}> go to ABOUT</Link>
-          <Link style={{color:'white', backgroundColor: 'red', cursor: 'pointer'}} to="contact" smooth={true} duration={1000}> go to CONTACT</Link>
-        </div>
-      </BackgroundImage>
+        <BackgroundImage
+          className="main-backgroundImage"
+          fluid={data.indexImage.childImageSharp.fluid}
+        >
+          <div className="overlay">
+            <Link style={{ color: 'white', backgroundColor: 'blue', cursor: 'pointer' }} to="about" smooth={true} duration={1000}> go to ABOUT</Link>
+            <Link style={{ color: 'white', backgroundColor: 'red', cursor: 'pointer' }} to="contact" smooth={true} duration={1000}> go to CONTACT</Link>
+          </div>
+        </BackgroundImage>
+      </div>
       <About />
       <Contact />
       <Footer />
