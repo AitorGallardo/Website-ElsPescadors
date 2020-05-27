@@ -24,9 +24,8 @@ const Header = (props) => {
   const [isSidebarOpen, setSidebar] = useState(false);
   const ref = useRef(null);
   const handleScroll = () => {
-
     if (ref.current) {
-      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= window.innerHeight);
+      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= (window.innerHeight - (window.innerHeight / 8)));
     }
   };
 
@@ -48,15 +47,15 @@ const Header = (props) => {
       <header className="sticky-content" id="container" >
         <SideBar id="sidebar" underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
         <nav>
-          <div style={{cursor: 'pointer'}} onClick={() => animateScroll.scrollToTop()}>
+          <div style={{ cursor: 'pointer' }} onClick={() => animateScroll.scrollToTop()}>
             <Image name="elspescadors-icon.png" />
           </div>
           <img onClick={toggleChildMenu} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
           <ul>
-            {props.underline === "home" ? (<ScrollLink to="home-top-side" underline={true}>Inici</ScrollLink>) : (<ScrollLink to="home-top-side">Inici</ScrollLink>)}
-            {props.underline === "about" ? (<ScrollLink to="about" underline={true}>Nosaltres</ScrollLink>) : (<ScrollLink to="about">Nosaltres</ScrollLink>)}
+            <ScrollLink to="home-top-side">Inici</ScrollLink>
+            <ScrollLink to="about">Nosaltres</ScrollLink>
             {props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true}>Carta</ListLink>) : (<ListLink to="/menu/cat">Carta</ListLink>)}
-            {props.underline === "contact" ? (<ScrollLink to="contact" underline={true}>Contacte</ScrollLink>) : (<ScrollLink to="contact">Contacte</ScrollLink>)}
+            <ScrollLink to="contact">Contacte</ScrollLink>
           </ul>
         </nav>
       </header>

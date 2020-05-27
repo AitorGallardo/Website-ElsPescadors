@@ -47,7 +47,7 @@ const HomePage = (props) => {
     <div>
       <SEO title="Inici" />
       <div id="home-top-side">
-      <Header underline="home" />
+        <Header underline="home" />
         <BackgroundImage
           className="main-backgroundImage"
           fluid={data.indexImage.childImageSharp.fluid}
@@ -58,8 +58,8 @@ const HomePage = (props) => {
           </div>
         </BackgroundImage>
       </div>
-      <About />
-      <Contact />
+        <About />
+        <Contact />
       <Footer />
     </div>
 

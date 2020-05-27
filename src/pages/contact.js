@@ -17,7 +17,7 @@ const Contact = () => {
   }
   return (
     <div>
-      <div id="contact">
+      <div style={{paddingTop: '120px'}} id="contact">
         <GoogleMap address={address} googleMapsApiKey={process.env.GATSBY_MAPS_APIKEY} />
         <div className="info-container">
           <div className="info-grid">
