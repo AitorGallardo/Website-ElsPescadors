@@ -23,7 +23,7 @@ const About = (props) => {
 
     return (
         <div>
-            <div className="g_container" id="about">
+            <div className={`g_container pages-top-zone`} id="about">
                 <BackgroundImage
                     className="about-image"
                     fluid={data.indexImage.childImageSharp.fluid}
