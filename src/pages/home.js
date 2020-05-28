@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Link } from "react-scroll"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
@@ -30,7 +30,6 @@ import "./home.css"
 // }
 
 const HomePage = (props) => {
-
   const data = useStaticQuery(graphql`
     query {
       indexImage: file(relativePath: { eq: "elspescadors4.jpg" }) {
@@ -43,11 +42,27 @@ const HomePage = (props) => {
     }
 `)
 
+  const locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
+  const scrollTo = () => {
+    const scrollLink = document.getElementById("scrollOnRouting");
+    scrollLink.click();
+  }
+
+  useEffect(() => {
+    if (window.scrollOnRoutingId) {
+      scrollTo();
+      delete window.scrollOnRoutingId;
+    }
+  });
+
+
+
+
   return (
     <div>
       <SEO title="Inici" />
       <div id="home-top-side">
-        <Header underline="home" />
+        <Header mainId="home" />
         <BackgroundImage
           className="main-backgroundImage"
           fluid={data.indexImage.childImageSharp.fluid}
@@ -58,8 +73,9 @@ const HomePage = (props) => {
           </div>
         </BackgroundImage>
       </div>
-        <About />
-        <Contact />
+      <About />
+      <Contact />
+      <Link style={{ display: 'none' }} id="scrollOnRouting" to={locationToScroll} smooth={true} duration={1000}></Link>
       <Footer />
     </div>
 

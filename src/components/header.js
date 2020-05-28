@@ -9,7 +9,7 @@ import menu_icon from "../icons/menu_icon.svg"
 import SideBar from "./sidebar.js"
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #0080fc' : 'none' }}>
+  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #0080fc' : 'none' }} onClick={()=>setScrollId(props.scrollId)}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
@@ -18,6 +18,27 @@ const ScrollLink = props => (
     <ReactScrollLink activeClass="activeLinkClass" to={props.to} smooth={true} duration={1000} spy={true}>{props.children}</ReactScrollLink>
   </li>
 )
+const setScrollId = (id)=>{
+  window.scrollOnRoutingId = id;
+}
+
+const LinksForHomePage = props => (
+  <ul>
+    <ScrollLink to="home-top-side">Inici</ScrollLink>
+    <ScrollLink to="about">Nosaltres</ScrollLink>
+    <ListLink to="/menu/cat">Carta</ListLink>
+    <ScrollLink to="contact">Contacte</ScrollLink>
+  </ul>
+)
+const LinksForMenuPage = props => {
+  return(
+  <ul>
+    <ListLink to="/">Inici</ListLink>
+    <ListLink to="/" scrollId="about">Nosaltres</ListLink>
+    <ListLink to="/menu/cat" underline={true}>Carta</ListLink>
+    <ListLink to="/" scrollId="contact">Contacte</ListLink>
+  </ul>
+)}
 
 const Header = (props) => {
   const [isSticky, setSticky] = useState(false);
@@ -25,7 +46,7 @@ const Header = (props) => {
   const ref = useRef(null);
   const handleScroll = () => {
     if (ref.current) {
-      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= (window.innerHeight - (window.innerHeight / 8)));
+      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= (window.innerHeight - (window.innerHeight / 10)));
     }
   };
 
@@ -42,6 +63,7 @@ const Header = (props) => {
   const toggleChildMenu = () => {
     setSidebar(true);
   }
+
   return (
     <div className={`sticky-container${isSticky ? ' sticky' : ''}`} ref={ref}>
       <header className="sticky-content" id="container" >
@@ -51,12 +73,7 @@ const Header = (props) => {
             <Image name="elspescadors-icon.png" />
           </div>
           <img onClick={toggleChildMenu} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
-          <ul>
-            <ScrollLink to="home-top-side">Inici</ScrollLink>
-            <ScrollLink to="about">Nosaltres</ScrollLink>
-            {props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true}>Carta</ListLink>) : (<ListLink to="/menu/cat">Carta</ListLink>)}
-            <ScrollLink to="contact">Contacte</ScrollLink>
-          </ul>
+          {props.mainId === 'home' ? (<LinksForHomePage/>):(<LinksForMenuPage/>)}
         </nav>
       </header>
     </div>

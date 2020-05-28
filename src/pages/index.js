@@ -9,8 +9,8 @@ import HomePage from "./home"
 
 
 const IndexPage = () => (
-  <div>
-    <HomePage/>
+  <div> 
+    <HomePage />
   </div>
 )
 

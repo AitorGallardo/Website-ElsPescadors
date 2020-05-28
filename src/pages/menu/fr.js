@@ -24,7 +24,7 @@ const MenuFr = () => {
   return(
   <div>
     <SEO title="Carta" />
-    <Header underline="menu" />
+    <Header mainId="menu" />
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
       <LanguageNav selected="fr"/>
       <ModalImage className="menu-image"
