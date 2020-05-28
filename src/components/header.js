@@ -67,7 +67,7 @@ const Header = (props) => {
   return (
     <div className={`sticky-container${isSticky ? ' sticky' : ''}`} ref={ref}>
       <header className="sticky-content" id="container" >
-        <SideBar id="sidebar" underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
+        <SideBar id="sidebar" mainId={props.mainId} underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
         <nav>
           <div style={{ cursor: 'pointer' }} onClick={() => animateScroll.scrollToTop()}>
             <Image name="elspescadors-icon.png" />

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import "./sidebar.css"
 import { Link } from "gatsby"
@@ -6,26 +6,49 @@ import home_icon from "../icons/navbar/home_icon.svg"
 import about_us_icon from "../icons/navbar/about_us_icon.svg"
 import menu_icon from "../icons/navbar/menu_icon.svg"
 import contact_icon from "../icons/navbar/contact_icon.svg"
-import {Link as ReactScrollLink} from "react-scroll"
+import { Link as ReactScrollLink } from "react-scroll"
 
 const ListLink = props => (
     <li >
-        <Link to={props.to} style={{ display: `flex`, alignItems: 'center' }}>
+        <Link to={props.to} style={{ display: `flex`, alignItems: 'center' }} onClick={()=>setScrollId(props.scrollId)}>
             <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
-            <div style={{borderBottom: props.underline ? '2px solid #0080fc' : 'none'}}>{props.children}</div>
+            <div style={{ borderBottom: props.underline ? '2px solid #0080fc' : 'none' }}>{props.children}</div>
         </Link>
     </li>
 )
 const ScrollLink = props => {
     const [isLinkActive, setLinkActive] = useState(false);
-    return(
-    <li >
-        <ReactScrollLink to={props.to} spy={true} onSetActive={()=> {setLinkActive(true)}} onSetInactive ={()=>setLinkActive(false)} smooth={true} duration={1000} style={{ display: `flex`, alignItems: 'center' }}>
-            <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
-            <div style={{ paddingBottom: '2px',borderBottom: isLinkActive ? '2px solid #0080fc': '2px solid transparent'}}>{props.children}</div>
-        </ReactScrollLink>
-    </li>
-)}
+    return (
+        <li >
+            <ReactScrollLink to={props.to} spy={true} onSetActive={() => { setLinkActive(true) }} onSetInactive={() => setLinkActive(false)} smooth={true} duration={1000} style={{ display: `flex`, alignItems: 'center' }}>
+                <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
+                <div style={{ paddingBottom: '2px', borderBottom: isLinkActive ? '2px solid #0080fc' : '2px solid transparent' }}>{props.children}</div>
+            </ReactScrollLink>
+        </li>
+    )
+}
+
+const setScrollId = (id)=>{
+    window.scrollOnRoutingId = id;
+  }
+  
+
+const LinksForHomePage = props => (
+    <>
+        <ScrollLink to="home-top-side" icon_src={home_icon} icon_alt="Home Icon">Inici</ScrollLink>
+        <ScrollLink to="about" icon_src={about_us_icon} icon_alt="About Icon">Nosaltres</ScrollLink>
+        <ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>
+        <ScrollLink to="contact" icon_src={contact_icon} icon_alt="Contact Icon">Contacte</ScrollLink>
+    </>
+);
+const LinksForMenuPage = props => (
+    <>
+        <ListLink to="/" icon_src={home_icon} icon_alt="Home Icon">Inici</ListLink>
+        <ListLink to="/" icon_src={about_us_icon} scrollId="about" icon_alt="About Icon">Nosaltres</ListLink>
+        <ListLink to="/menu/cat" underline={true} icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>
+        <ListLink to="/" icon_src={contact_icon} scrollId="contact" icon_alt="Contact Icon">Contacte</ListLink>
+    </>
+);
 
 export default class SideBar extends React.Component {
 
@@ -53,11 +76,7 @@ export default class SideBar extends React.Component {
         return (
             <div id="sidebar-cont">
                 <Menu right isOpen={this.state.open} onStateChange={this.isMenuOpen}>
-                <ScrollLink to="home-top-side" icon_src={home_icon} icon_alt="Home Icon">Inici</ScrollLink>
-                <ScrollLink to="about" icon_src={about_us_icon} icon_alt="About Icon">Nosaltres</ScrollLink>
-                {this.props.underline === "menu" ? (<ListLink to="/menu/cat" underline={true} icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>):
-                    (<ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>)}
-                <ScrollLink to="contact" icon_src={contact_icon} icon_alt="Contact Icon">Contacte</ScrollLink>
+                   {this.props.mainId === 'home' ? (<LinksForHomePage/>):(<LinksForMenuPage/>)}
                 </Menu>
             </div>
         );
