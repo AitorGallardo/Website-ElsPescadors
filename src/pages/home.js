@@ -37,13 +37,14 @@ const HomePage = (props) => {
     query {
       indexImage: file(relativePath: { eq: "elspescadors4.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1800) {
+          fluid(maxWidth: 1800, quality: 100) {
             ...GatsbyImageSharpFluid 
           }
         }
       }
     }
 `)
+
 
   const locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
   const scrollTo = () => {
@@ -72,8 +73,6 @@ const HomePage = (props) => {
           fluid={data.indexImage.childImageSharp.fluid}
         >
           <div className="overlay">
-            <Link style={{ color: 'white', backgroundColor: 'blue', cursor: 'pointer' }} to="about" smooth={true} duration={1000}> go to ABOUT</Link>
-            <Link style={{ color: 'white', backgroundColor: 'red', cursor: 'pointer' }} to="contact" smooth={true} duration={1000}> go to CONTACT</Link>
           </div>
         </BackgroundImage>
       </div>
