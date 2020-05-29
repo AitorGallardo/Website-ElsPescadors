@@ -2,11 +2,11 @@
     display: flex;
     padding-right: 20px;
     padding-left: 20px;
-    height: calc(100vh - 105px);
+    height: 100vh
 }
 .about-image {
     width: 50%;
-    height: 80vh;
+    height: 60vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
