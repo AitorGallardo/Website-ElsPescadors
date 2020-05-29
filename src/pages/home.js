@@ -44,9 +44,13 @@ const HomePage = (props) => {
       }
     }
 `)
+  // On build protection
+  if (typeof window !== `undefined`) {
+    const locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
+  }else {
+    const locationToScroll = '';
+  }
 
-
-  const locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
   const scrollTo = () => {
     const scrollLink = document.getElementById("scrollOnRouting");
     scrollLink.click();

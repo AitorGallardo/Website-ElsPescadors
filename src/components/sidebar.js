@@ -29,7 +29,10 @@ const ScrollLink = props => {
 }
 
 const setScrollId = (id)=>{
+      // On build protection
+  if (typeof window !== `undefined`) {
     window.scrollOnRoutingId = id;
+  } 
   }
   
 

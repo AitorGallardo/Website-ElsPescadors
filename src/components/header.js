@@ -9,7 +9,7 @@ import menu_icon from "../icons/menu_icon.svg"
 import SideBar from "./sidebar"
 
 const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #262626' : 'none' }} onClick={()=>setScrollId(props.scrollId)}>
+  <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #262626' : 'none' }} onClick={() => setScrollId(props.scrollId)}>
     <Link to={props.to}>{props.children}</Link>
   </li>
 )
@@ -18,8 +18,11 @@ const ScrollLink = props => (
     <ReactScrollLink activeClass="activeLinkClass" to={props.to} smooth={true} duration={1000} spy={true}>{props.children}</ReactScrollLink>
   </li>
 )
-const setScrollId = (id)=>{
-  window.scrollOnRoutingId = id;
+const setScrollId = (id) => {
+  // On build protection
+  if (typeof window !== `undefined`) {
+    window.scrollOnRoutingId = id;
+  }
 }
 
 const LinksForHomePage = props => (
@@ -31,21 +34,25 @@ const LinksForHomePage = props => (
   </ul>
 )
 const LinksForMenuPage = props => {
-  return(
-  <ul>
-    <ListLink to="/">Inici</ListLink>
-    <ListLink to="/" scrollId="about">Nosaltres</ListLink>
-    <ListLink to="/menu/cat" underline={true}>Carta</ListLink>
-    <ListLink to="/" scrollId="contact">Contacte</ListLink>
-  </ul>
-)}
+  return (
+    <ul>
+      <ListLink to="/">Inici</ListLink>
+      <ListLink to="/" scrollId="about">Nosaltres</ListLink>
+      <ListLink to="/menu/cat" underline={true}>Carta</ListLink>
+      <ListLink to="/" scrollId="contact">Contacte</ListLink>
+    </ul>
+  )
+}
 
 const Header = (props) => {
   const [isSticky, setSticky] = useState(false);
   const ref = useRef(null);
   const handleScroll = () => {
     if (ref.current) {
-      setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= (window.innerHeight - (window.innerHeight / 10)));
+      // On build protection
+      if (typeof window !== `undefined`) {
+        setSticky(Math.abs(ref.current.getBoundingClientRect().top) >= (window.innerHeight - (window.innerHeight / 10)));
+      }
     }
   };
 
@@ -64,11 +71,11 @@ const Header = (props) => {
       <header className="sticky-content" id="container" >
         {/* <SideBar id="sidebar" mainId={props.mainId} underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} /> */}
         <nav>
-          <div style={{ cursor: 'pointer' }} onClick={() => {props.mainId === 'home' ? animateScroll.scrollToTop() : navigate('/')}}>
+          <div style={{ cursor: 'pointer' }} onClick={() => { props.mainId === 'home' ? animateScroll.scrollToTop() : navigate('/') }}>
             <Image name="elspescadors-icon.png" />
           </div>
           <img onClick={props.toggleSidebar} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
-          {props.mainId === 'home' ? (<LinksForHomePage/>):(<LinksForMenuPage/>)}
+          {props.mainId === 'home' ? (<LinksForHomePage />) : (<LinksForMenuPage />)}
         </nav>
       </header>
     </div>
