@@ -12,7 +12,7 @@ const ListLink = props => (
     <li >
         <Link to={props.to} style={{ display: `flex`, alignItems: 'center' }} onClick={()=>setScrollId(props.scrollId)}>
             <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
-            <div style={{ borderBottom: props.underline ? '2px solid #0080fc' : 'none' }}>{props.children}</div>
+            <div style={{ borderBottom: props.underline ? '2px solid #262626' : 'none' }}>{props.children}</div>
         </Link>
     </li>
 )
@@ -22,7 +22,7 @@ const ScrollLink = props => {
         <li >
             <ReactScrollLink to={props.to} spy={true} onSetActive={() => { setLinkActive(true) }} onSetInactive={() => setLinkActive(false)} smooth={true} duration={1000} style={{ display: `flex`, alignItems: 'center' }}>
                 <img style={{ marginRight: '25px' }} id="menu-icon" src={props.icon_src} alt={props.icon_alt} widt="20px" height="20px" />
-                <div style={{ paddingBottom: '2px', borderBottom: isLinkActive ? '2px solid #0080fc' : '2px solid transparent' }}>{props.children}</div>
+                <div style={{ paddingBottom: '2px', borderBottom: isLinkActive ? '2px solid #262626' : '2px solid transparent' }}>{props.children}</div>
             </ReactScrollLink>
         </li>
     )

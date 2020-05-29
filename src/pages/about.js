@@ -31,8 +31,7 @@ const About = (props) => {
                 </BackgroundImage>
                 <div className="text-container">
                     <h1>Els Pescadors</h1>
-                    <p>Auténtica brasería que recoge lo mejor de la gastronomía mediterránea. Cuenta con 2 espacios diferenciados, la planta baja es ideal para degustar tapas y 
-                        montaditos de excelente calidad, y en la de arriba, una gran variedad de productos a la brasa.</p>
+                    <p>Restaurant ubicat al cor de la platja on podràs conèixer l'autèntica cuina mediterrània.</p>
                 </div>
             </div>
 
