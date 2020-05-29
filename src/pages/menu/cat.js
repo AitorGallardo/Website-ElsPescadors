@@ -1,17 +1,14 @@
 import React from "react"
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import SEO from "../../components/seo"
 import menu_CAT_1 from "../../images/menus/menu_CAT_1.jpg"
 import menu_CAT_2 from "../../images/menus/menu_CAT_2.jpg"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
+import MenuLayout from "../../components/menuLayout"
 
 
 const MenuCat = () => (
   <div>
-    <SEO title="Carta" />
-    <Header mainId="menu" />
+    <MenuLayout>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="cat"/>
       <div>
@@ -29,7 +26,7 @@ const MenuCat = () => (
         />
       </div>
     </div>
-    <Footer />
+      </MenuLayout>
   </div>
 )
 

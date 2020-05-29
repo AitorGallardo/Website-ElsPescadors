@@ -6,7 +6,7 @@ import { animateScroll, Link as ReactScrollLink } from "react-scroll"
 import Image from "../components/image"
 import "./header.css"
 import menu_icon from "../icons/menu_icon.svg"
-import SideBar from "./sidebar.js"
+import SideBar from "./sidebar"
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #0080fc' : 'none' }} onClick={()=>setScrollId(props.scrollId)}>
@@ -42,7 +42,6 @@ const LinksForMenuPage = props => {
 
 const Header = (props) => {
   const [isSticky, setSticky] = useState(false);
-  const [isSidebarOpen, setSidebar] = useState(false);
   const ref = useRef(null);
   const handleScroll = () => {
     if (ref.current) {
@@ -60,19 +59,15 @@ const Header = (props) => {
   }, []);
 
 
-  const toggleChildMenu = () => {
-    setSidebar(true);
-  }
-
   return (
     <div className={`sticky-container${isSticky ? ' sticky' : ''}`} ref={ref}>
       <header className="sticky-content" id="container" >
-        <SideBar id="sidebar" mainId={props.mainId} underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
+        {/* <SideBar id="sidebar" mainId={props.mainId} underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} /> */}
         <nav>
           <div style={{ cursor: 'pointer' }} onClick={() => animateScroll.scrollToTop()}>
             <Image name="elspescadors-icon.png" />
           </div>
-          <img onClick={toggleChildMenu} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
+          <img onClick={props.toggleSidebar} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
           {props.mainId === 'home' ? (<LinksForHomePage/>):(<LinksForMenuPage/>)}
         </nav>
       </header>

@@ -1,10 +1,8 @@
 import React from "react"
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import SEO from "../../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
+import MenuLayout from "../../components/menuLayout"
 
 const MenuRu = () => {
 
@@ -22,8 +20,7 @@ const MenuRu = () => {
 
   return(
   <div>
-    <SEO title="Carta" />
-    <Header mainId="menu" />
+    <MenuLayout>
     <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
       <LanguageNav selected="ru"/>
       <ModalImage className="menu-image"
@@ -33,7 +30,7 @@ const MenuRu = () => {
         alt="меню"
       />
     </div>
-    <Footer />
+      </MenuLayout>
   </div>
 )
 }

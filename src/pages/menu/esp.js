@@ -1,17 +1,13 @@
 import React from "react"
-import Header from "../../components/header"
-import Footer from "../../components/footer"
-import SEO from "../../components/seo"
 import menu_ESP_1 from "../../images/menus/menu_ESP_1.jpg"
 import menu_ESP_2 from "../../images/menus/menu_ESP_2.jpg"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
-
+import MenuLayout from "../../components/menuLayout"
 
 const MenuEsp = () => (
   <div>
-    <SEO title="Carta" />
-    <Header mainId="menu" />
+    <MenuLayout>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="esp"/>
       <div>
@@ -29,7 +25,7 @@ const MenuEsp = () => (
         />
       </div>
     </div>
-    <Footer />
+      </MenuLayout>
   </div>
 )
 

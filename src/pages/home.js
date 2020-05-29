@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { Link } from "react-scroll"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import About from "./about"
 import Contact from "./contact"
+import SideBar from "../components/sidebar"
 import "./home.css"
 
 
@@ -30,6 +31,8 @@ import "./home.css"
 // }
 
 const HomePage = (props) => {
+  const [isSidebarOpen, setSidebar] = useState(false);
+
   const data = useStaticQuery(graphql`
     query {
       indexImage: file(relativePath: { eq: "elspescadors4.jpg" }) {
@@ -62,7 +65,8 @@ const HomePage = (props) => {
     <div>
       <SEO title="Inici" />
       <div id="home-top-side">
-        <Header mainId="home" />
+      <SideBar id="sidebar" mainId="home" open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
+        <Header mainId="home" toggleSidebar={()=>setSidebar(true)} />
         <BackgroundImage
           className="main-backgroundImage"
           fluid={data.indexImage.childImageSharp.fluid}
