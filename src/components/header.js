@@ -1,7 +1,7 @@
 
 import React, { Fragment, useEffect, useRef, useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, Link, graphql } from "gatsby"
+import { navigate, Link } from "gatsby"
 import { animateScroll, Link as ReactScrollLink } from "react-scroll"
 import Image from "../components/image"
 import "./header.css"
@@ -64,7 +64,7 @@ const Header = (props) => {
       <header className="sticky-content" id="container" >
         {/* <SideBar id="sidebar" mainId={props.mainId} underline={props.underline} open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} /> */}
         <nav>
-          <div style={{ cursor: 'pointer' }} onClick={() => animateScroll.scrollToTop()}>
+          <div style={{ cursor: 'pointer' }} onClick={() => {props.mainId === 'home' ? animateScroll.scrollToTop() : navigate('/')}}>
             <Image name="elspescadors-icon.png" />
           </div>
           <img onClick={props.toggleSidebar} id="menu-icon" src={menu_icon} alt="Menu Icon" widt="24px" height="24px" />
