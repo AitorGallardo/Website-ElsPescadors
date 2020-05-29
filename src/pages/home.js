@@ -45,10 +45,9 @@ const HomePage = (props) => {
     }
 `)
   // On build protection
+  let locationToScroll = '';
   if (typeof window !== `undefined`) {
-    const locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
-  }else {
-    const locationToScroll = '';
+    locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
   }
 
   const scrollTo = () => {
