@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './marker'
+import './map.css'
 
 
 const isClient = typeof window !== 'undefined';
@@ -16,7 +17,7 @@ const GoogleMap = (props) => {
 
   return (
     <section className="google-map">
-      <div className="map" style={{ height: '400px', width: '100%' }}>
+      <div className="map-size">
         {isClient && (
           <GoogleMapReact
             bootstrapURLKeys={{ key: googleMapsApiKey }}
