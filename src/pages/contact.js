@@ -17,7 +17,7 @@ const Contact = () => {
   }
   return (
     <div>
-      <div className="pages-top-zone" id="contact">
+      <div className={`contact-container pages-top-zone`} id="contact">
         <GoogleMap address={address} googleMapsApiKey={process.env.GATSBY_MAPS_APIKEY} />
         <div className="info-container">
           <div className="info-grid">
