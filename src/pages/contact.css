@@ -43,7 +43,7 @@
     }
 }
 
-@media screen and ( min-width: 850px ) and ( max-height: 2020px )
+@media screen and ( min-width: 850px ) and ( max-height: 730px )
 {
     .info-container{
         height: calc(100vh - 355px);
