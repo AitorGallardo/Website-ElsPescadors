@@ -24,13 +24,12 @@ const Contact = () => {
             <div>
               <h2>Horari</h2>
               <p>Tots els dies de la setmana</p>
-              <p>De 10:00 h a 16:30h</p>
-              <p>De 19:45h a 23:30h</p>
+              <p>De 10:00 h a 18:00h</p>
             </div>
             <div>
               <h2>Com contactar</h2>
               <p>937 62 63 99</p>
-              <p>contactme@elspescadors.com</p>
+              <p>Platja, 08397 Pineda de Mar, Barcelona</p>
             </div>
           </div>
         </div>

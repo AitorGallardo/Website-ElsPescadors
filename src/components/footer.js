@@ -12,16 +12,14 @@ const Footer = () => {
                     <div id="schedule">
                         <h4>Horari</h4>
                         <div id="schedule-contaier">
-                            <p>De 10:00 h a 16:30h</p>
-                            <p>De 19:45h a 23:30h</p>
+                            <p>De 10:00 h a 18:00h</p>
                             <p id="schedule-big-field">Tots els dies de la setmana</p>
                         </div>
                     </div>
                     <div id="contact-footer">
                         <h4>Dades de Contacte</h4>
                         <address id="contact-footer">
-                        <p>937 62 63 99</p>
-                            <p>contactme@elspescadors.com</p>
+                            <p>937 62 63 99</p>
                             <p>Platja, 08397 Pineda de Mar, Barcelona</p>
                         </address>
                     </div>
