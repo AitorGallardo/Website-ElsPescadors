@@ -66,11 +66,9 @@ img{
         grid-row-gap: 40px;
     }
     #schedule-contaier{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-column-gap: 10px;
+        display: block;
+        text-align: center;
     }
-    
     #schedule-big-field{
         grid-column: span 2;
         justify-self: center;
