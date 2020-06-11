@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                     <div id="legal">
                         <h4>Assumptes legals</h4>
-                        <Link to="cookies-policy">Política de cookies</Link>
+                        <Link className="link-style" to="cookies-policy">Política de cookies</Link>
                     </div>
                     <div id="social">
                         <h4>Segueix-nos a Xarxes</h4>

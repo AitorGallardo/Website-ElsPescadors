@@ -18,6 +18,11 @@ img{
     display: flex;
 }
 
+.link-style {
+    color: white;
+    text-decoration: underline;
+}
+
 
 .grid-container{
     display: grid; 
