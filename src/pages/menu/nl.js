@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useState } from 'react';
 import { useStaticQuery, graphql } from "gatsby"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
 import MenuLayout from "../../components/menuLayout"
+import suggestionsImage from "../../images/menus/suggestions_nl.jpg"
 
 const MenuNl = () => {
+
+
+
 
   const data = useStaticQuery(graphql`
   query {
@@ -18,20 +22,34 @@ const MenuNl = () => {
   }
 `)
 
-  return(
-  <div>
-    <MenuLayout>
-    <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
-      <LanguageNav selected="nl"/>
-      <ModalImage className="menu-image"
-        small={data.indexImage.childImageSharp.fluid.src}
-        large={data.indexImage.childImageSharp.fluid.src}
-        hideZoom={true}
-        alt="Menukaart"
-      />
-    </div>
+const menuImageRef = data?.indexImage?.childImageSharp?.fluid?.src;
+const suggestionsImageRef = suggestionsImage;
+
+const [showSuggestions, setSuggestions] = useState(false);
+const [image, setImage] = useState(data?.indexImage?.childImageSharp?.fluid?.src);
+
+
+  return (
+    <div>
+      <MenuLayout>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <LanguageNav selected="nl" />
+          {showSuggestions ? <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
+            <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Menu</div>
+          </div> : <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
+              <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Suggesties</div>
+            </div>}
+
+
+          <ModalImage className="menu-image"
+            small={image}
+            large={image}
+            hideZoom={true}
+            alt="Menukaart"
+          />
+        </div>
       </MenuLayout>
-  </div>
-)
+    </div>
+  )
 }
 export default MenuNl
