@@ -18,31 +18,31 @@ const MenuDe = () => {
   }
 `)
 
-const menuImageRef = data?.indexImage?.childImageSharp?.fluid?.src;
-const suggestionsImageRef = suggestionsImage;
+  const menuImageRef = data?.indexImage?.childImageSharp?.fluid?.src;
+  const suggestionsImageRef = suggestionsImage;
 
-const [showSuggestions, setSuggestions] = useState(false);
-const [image, setImage] = useState(data?.indexImage?.childImageSharp?.fluid?.src);
+  const [showSuggestions, setSuggestions] = useState(false);
+  const [image, setImage] = useState(data?.indexImage?.childImageSharp?.fluid?.src);
 
-  return(
-  <div>
-    <MenuLayout>
-    <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center' }}>
-      <LanguageNav selected="de"/>
-    {showSuggestions ? <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
+  return (
+    <div>
+      <MenuLayout>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <LanguageNav selected="de" />
+          {showSuggestions ? <div className="menu-image-header" onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
             <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Menü</div>
-          </div> : <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
+          </div> : <div className="menu-image-header" onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
               <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Vorschläg</div>
             </div>}
-      <ModalImage className="menu-image"
-        small={image}
-        large={image}
-        hideZoom={true}
-        alt="Speisekarte"
-      />
-    </div>
+          <ModalImage className="menu-image"
+            small={image}
+            large={image}
+            hideZoom={true}
+            alt="Speisekarte"
+          />
+        </div>
       </MenuLayout>
-  </div>
-)
+    </div>
+  )
 }
 export default MenuDe

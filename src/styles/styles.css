@@ -17,6 +17,12 @@
     animation: moveDown 0.5s ease-in-out;
 }
 
+.menu-image-header {
+    display: flex;
+    padding: 0px 30px;
+    font-size: 22px;
+}
+
 
 @keyframes moveDown {
     from {
@@ -83,5 +89,13 @@
     }
     .pages-top-zone{
         padding-top: 65px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-image-header {
+        display: flex;
+        padding: 0px 30px;
+        font-size: 16px;
     }
 }

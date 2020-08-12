@@ -34,9 +34,9 @@ const [image, setImage] = useState(data?.indexImage?.childImageSharp?.fluid?.src
       <MenuLayout>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <LanguageNav selected="nl" />
-          {showSuggestions ? <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
+          {showSuggestions ? <div className="menu-image-header" onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
             <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Menu</div>
-          </div> : <div style={{ display: 'flex', justifyContent: 'start', padding: '0px 30px', alignSelf: 'end' }} onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
+          </div> : <div className="menu-image-header" onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
               <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Suggesties</div>
             </div>}
 
