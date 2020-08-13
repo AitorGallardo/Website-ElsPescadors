@@ -97,5 +97,6 @@
         display: flex;
         padding: 0px 30px;
         font-size: 16px;
+        align-self: start;
     }
 }

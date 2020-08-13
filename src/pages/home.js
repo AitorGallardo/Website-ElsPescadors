@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-scroll"
 import Layout from "../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
@@ -11,6 +11,7 @@ import About from "./about"
 import Contact from "./contact"
 import SideBar from "../components/sidebar"
 import "./home.css"
+//import DogMp4 from "../images/video_drone_night.mp4"
 
 
 
@@ -35,7 +36,7 @@ const HomePage = (props) => {
 
   const data = useStaticQuery(graphql`
     query {
-      indexImage: file(relativePath: { eq: "elspescadors4.jpg" }) {
+      indexImage: file(relativePath: { eq: "elspescadors_portada.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 1800, quality: 100) {
             ...GatsbyImageSharpFluid 
@@ -69,8 +70,8 @@ const HomePage = (props) => {
     <div>
       <SEO title="Inici" />
       <div id="home-top-side">
-      <SideBar id="sidebar" mainId="home" open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
-        <Header mainId="home" toggleSidebar={()=>setSidebar(true)} />
+        <SideBar id="sidebar" mainId="home" open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
+        <Header mainId="home" toggleSidebar={() => setSidebar(true)} />
         <BackgroundImage
           className="main-backgroundImage"
           fluid={data.indexImage.childImageSharp.fluid}
@@ -78,6 +79,10 @@ const HomePage = (props) => {
           <div className="overlay">
           </div>
         </BackgroundImage>
+
+          {/* <video style={{ height: '100vh' }} loop autoplay="autoplay" muted>
+            <source src={DogMp4} type="video/mp4" />
+          </video> */}
       </div>
       <About />
       <Contact />
