@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
-import "./sidebar.css"
+import "../assets/styles/components/sidebar.css"
 import { Link } from "gatsby"
-import home_icon from "../icons/navbar/home_icon.svg"
-import about_us_icon from "../icons/navbar/about_us_icon.svg"
-import menu_icon from "../icons/navbar/menu_icon.svg"
-import contact_icon from "../icons/navbar/contact_icon.svg"
+import home_icon from "../assets/icons/navbar/home_icon.svg"
+import about_us_icon from "../assets/icons/navbar/about_us_icon.svg"
+import menu_icon from "../assets/icons/navbar/menu_icon.svg"
+import contact_icon from "../assets/icons/navbar/contact_icon.svg"
 import { Link as ReactScrollLink } from "react-scroll"
 
 const ListLink = props => (

@@ -1,10 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
-import "./about.css"
+import "../assets/styles/pages/about.css"
 
 
 const About = (props) => {

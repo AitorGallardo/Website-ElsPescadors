@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
 import MenuLayout from "../../components/menuLayout"
-import suggestionsImage from "../../images/menus/suggestions_nl.jpg"
+import suggestionsImage from "../../assets/images/menus/suggestions_nl.jpg"
 
 const MenuNl = () => {
 

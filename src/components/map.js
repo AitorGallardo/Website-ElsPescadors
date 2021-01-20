@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './marker'
-import './map.css'
+import '../assets/styles/components/map.css'
 
 
 const isClient = typeof window !== 'undefined';

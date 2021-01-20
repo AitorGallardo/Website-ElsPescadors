@@ -1,12 +1,11 @@
 
 import React, { Fragment, useEffect, useRef, useState } from "react"
-import PropTypes from "prop-types"
 import { navigate, Link } from "gatsby"
 import { animateScroll, Link as ReactScrollLink } from "react-scroll"
-import Image from "../components/image"
-import "./header.css"
-import menu_icon from "../icons/menu_icon.svg"
-import SideBar from "./sidebar"
+import Image from "./image"
+import "../assets/styles/components/header.css"
+import menu_icon from "../assets/icons/menu_icon.svg"
+
 
 const ListLink = props => (
   <li style={{ display: `inline-block`, marginRight: `1rem`, borderBottom: props.underline ? '2px solid #262626' : 'none' }} onClick={() => setScrollId(props.scrollId)}>

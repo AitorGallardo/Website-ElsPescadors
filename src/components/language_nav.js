@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from "gatsby"
-import "./language_nav.css"
-import cat_flag from "../icons/flags/cat_flag.svg"
-import esp_flag from "../icons/flags/esp_flag.svg"
-import eng_flag from "../icons/flags/eng_flag.svg"
-import ita_flag from "../icons/flags/ita_flag.svg"
-import fr_flag from "../icons/flags/fr_flag.svg"
-import de_flag from "../icons/flags/de_flag.svg"
-import nl_flag from "../icons/flags/nl_flag.svg"
-import ru_flag from "../icons/flags/ru_flag.svg"
+import "../assets/styles/components/language_nav.css"
+import cat_flag from "../assets/icons/flags/cat_flag.svg"
+import esp_flag from "../assets/icons/flags/esp_flag.svg"
+import eng_flag from "../assets/icons/flags/eng_flag.svg"
+import ita_flag from "../assets/icons/flags/ita_flag.svg"
+import fr_flag from "../assets/icons/flags/fr_flag.svg"
+import de_flag from "../assets/icons/flags/de_flag.svg"
+import nl_flag from "../assets/icons/flags/nl_flag.svg"
+import ru_flag from "../assets/icons/flags/ru_flag.svg"
 
 const flagStyle = {
     position: "absolute",

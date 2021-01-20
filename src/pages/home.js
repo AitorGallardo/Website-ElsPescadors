@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "react-scroll"
-import Layout from "../components/layout"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
@@ -10,7 +8,7 @@ import BackgroundImage from "gatsby-background-image"
 import About from "./about"
 import Contact from "./contact"
 import SideBar from "../components/sidebar"
-import "./home.css"
+import "../assets/styles/pages/home.css"
 //import DogMp4 from "../images/video_drone_night.mp4"
 
 

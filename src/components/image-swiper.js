@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { graphql, useStaticQuery } from "gatsby"
-import "./image-swiper.css";
+import "../assets/styles/components/image-swiper.css";
 
 
 const IMG_WIDTH = 700;

@@ -1,5 +1,5 @@
 import React from 'react';
-import map_marker from "../icons/map_marker.svg"
+import map_marker from "../assets/icons/map_marker.svg"
 
 
 const markerStyle = {

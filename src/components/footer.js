@@ -1,8 +1,8 @@
 import React from "react"
-import './footer.css'
+import '../assets/styles/components/footer.css'
 import { Link } from "gatsby"
-import social_facebook from "../icons/social_facebook.svg"
-import social_instagram from "../icons/social_instagram.svg"
+import social_facebook from "../assets/icons/social_facebook.svg"
+import social_instagram from "../assets/icons/social_instagram.svg"
 
 const Footer = () => {
     return (
