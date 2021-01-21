@@ -1,46 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from "gatsby"
-import ModalImage from "react-modal-image";
 import LanguageNav from "../../components/language_nav"
 import MenuLayout from "../../components/menuLayout"
-import suggestionsImage from "../../assets/images/menus/suggestions_eng.jpg"
+import MenuSuggestions from "../../components/menuSuggestions"
 
 const MenuEng = () => {
 
   const data = useStaticQuery(graphql`
-    query {
-      indexImage: file(relativePath: { eq: "menus/menu_ENG.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1800) {
-            ...GatsbyImageSharpFluid 
+  query getEngImages {
+    allFile(filter: {relativeDirectory: {eq: "menus"}, name: {regex: "/ENG/"}}) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid(maxWidth: 1800) {
+              aspectRatio
+              base64
+              sizes
+              src
+              srcSet
+            }
           }
         }
       }
     }
-`)
+  }
+  `)
 
-const menuImageRef = data?.indexImage?.childImageSharp?.fluid?.src;
-const suggestionsImageRef = suggestionsImage;
+  let menuImage = null;
+  let suggestionsImage = null;
 
-const [showSuggestions, setSuggestions] = useState(false);
-const [image, setImage] = useState(data?.indexImage?.childImageSharp?.fluid?.src);
+  const options = {
+    menuName:'Menu',
+    suggestionsName:'Suggestions',
+    imgAlt:'Menu',
+  }
+
+  data.allFile.edges.map(({node})=>{
+    if(node.base.includes('menu')){
+      menuImage = node.childImageSharp.fluid.src;
+    }else{
+      suggestionsImage = node.childImageSharp.fluid.src;
+    }
+  })
+
 
   return (
     <div>
       <MenuLayout>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <LanguageNav selected="eng" />
-        {showSuggestions ? <div className="menu-image-header" onClick={() => { setSuggestions(false); setImage(menuImageRef) }}>
-            <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Menu</div>
-          </div> : <div className="menu-image-header" onClick={() => { setSuggestions(true); setImage(suggestionsImageRef); }}>
-              <div style={{ display: 'list-item', listStyleType: 'disc', listStylePosition: 'inside', textDecoration: 'underline', fontStyle: 'italic', cursor: 'pointer' }}>Suggestions</div>
-            </div>}
-          <ModalImage className="menu-image"
-            small={image}
-            large={image}
-            hideZoom={true}
-            alt="Menu"
-          />
+           <MenuSuggestions menuImage={menuImage} suggestionsImage={suggestionsImage} options={options}/>
         </div>
       </MenuLayout>
     </div>
