@@ -3,9 +3,9 @@ require('dotenv').config({path: `./.env.${env}`});
 module.exports = {
   siteMetadata: {
     title: `Els Pescadors`,
-    description: `Mediterranean Restaurant`,
+    description: `Restaurant Mediterrani`,
     author: `ElsPescadors`,
-    keywords: [`restaurant`, 'mediterrani'],
+    keywords: ['els pescadors','els pescadors pineda de mar', 'pineda de mar', 'restaurant els pescadors', 'restaurant pineda'],
     siteUrl: `https://elspescadorspinedademar.cat`
   },
   plugins: [
