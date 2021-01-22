@@ -4,6 +4,8 @@ require('dotenv').config({path: `./.env.${env}`});
 // Related to 'gatsby-plugin-robots-txt' whick will avoid netlify's preview.
 /** If you are using Netlify, you might end up deploying many versions of your website. Preview versions might be deployed on each pull-request. 
  * One of those versions might end up behind found by Google. And that’s how your website gets sanctioned for “duplicate content”. */
+
+// More about SEO in Gatsby ==> https://gregberge.com/blog/gatsby-seo || https://medium.com/frontend-digest/a-technical-guide-to-seo-with-gatsby-js-e88a7dac80f0 || https://www.joshwcomeau.com/gatsby/seo-friendly-sitemap/#what-is-an-xml-sitemap
 const {
   NODE_ENV,
   URL: NETLIFY_SITE_URL = 'https://elspescadorspinedademar.cat',
@@ -72,6 +74,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
