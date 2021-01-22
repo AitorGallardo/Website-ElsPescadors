@@ -28,7 +28,7 @@ const About = (props) => {
                 </BackgroundImage>
                 <div className="text-container">
                     <h1>Els Pescadors</h1>
-                    <p style={{letterSpacing: '2px', lineHeight: '33px'}}>Restaurant Mediterrani ubicat en ple cor de la platja de Pineda de Mar.
+                    <p className="about-text">Restaurant Mediterrani ubicat en ple cor de la platja de Pineda de Mar.
 De caire familiar, anys de tradició i cuina de proximitat, intentem sempre donar un servei ràpid, eficient i de qualitat perquè els moments en aquest indret únic, siguin inoblidables.</p>
                 </div>
             </div>
