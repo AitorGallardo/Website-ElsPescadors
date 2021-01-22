@@ -8,7 +8,6 @@ import Footer from "./footer"
 const MenuLayout = ({ children, props }) => {
     const [isSidebarOpen, setSidebar] = useState(false);
 
-
     return (
         <>
             <SEO title="Carta" />

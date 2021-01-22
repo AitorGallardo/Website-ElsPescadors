@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
-  const { site } = useStaticQuery(
+  const { site,file } = useStaticQuery(
     graphql`
       query {
         site {
@@ -23,15 +23,25 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
             siteUrl
           }
         }
+        file(relativePath: {eq: "portada.jpeg"}) {
+          childImageSharp {
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
+          }
+        }
       }
     `
   )
-
+      console.log(`file`,file);
+  
   const metaDescription = description || site.siteMetadata.description
   const image =
   metaImage && metaImage.src
     ? `${site.siteMetadata.siteUrl}${metaImage.src}`
-    : null
+    : `${site.siteMetadata.siteUrl}${file.childImageSharp.resize.src}`
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
   return (
     <Helmet
@@ -40,6 +50,16 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: "canonical",
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
         {
           name: `description`,
