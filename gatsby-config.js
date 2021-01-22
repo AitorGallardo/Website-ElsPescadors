@@ -5,6 +5,8 @@ module.exports = {
     title: `Els Pescadors`,
     description: `Mediterranean Restaurant`,
     author: `ElsPescadors`,
+    keywords: [`restaurant`, 'mediterrani'],
+    siteUrl: `https://elspescadorspinedademar.cat`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

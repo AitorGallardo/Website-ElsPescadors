@@ -39,6 +39,11 @@ const HomePage = (props) => {
           fluid(maxWidth: 1800, quality: 100) {
             ...GatsbyImageSharpFluid 
           }
+          resize(width: 1200) {
+            src
+            height
+            width
+          }
         }
       }
     }
@@ -48,6 +53,8 @@ const HomePage = (props) => {
   if (typeof window !== `undefined`) {
     locationToScroll = window.scrollOnRoutingId ? window.scrollOnRoutingId : '';
   }
+
+  console.log(`dddaat`,data);
 
   const scrollTo = () => {
     const scrollLink = document.getElementById("scrollOnRouting");
@@ -66,7 +73,7 @@ const HomePage = (props) => {
 
   return (
     <div>
-      <SEO title="Inici" />
+      <SEO title="Inici" image={data.indexImage.childImageSharp.resize}/>
       <div id="home-top-side">
         <SideBar id="sidebar" mainId="home" open={isSidebarOpen} onClickClose={(e) => setSidebar(false)} pageWrapId={"page-wrap"} outerContainerId={"container"} />
         <Header mainId="home" toggleSidebar={() => setSidebar(true)} />
