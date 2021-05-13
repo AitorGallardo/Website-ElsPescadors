@@ -32,7 +32,7 @@ const MenuCat = () => {
   let image2 = null
 
   data.allFile.edges.map(({node})=>{
-    if(node.base.includes('1')){
+    if(node.base.includes('menu')){
       image1 = node.childImageSharp.fluid.src;
     }else{
       image2 = node.childImageSharp.fluid.src;
@@ -49,13 +49,14 @@ const MenuCat = () => {
           small={image1}
           large={image1}
           hideZoom={true}
-          alt="Carta 1/2"
+          alt="Carta"
         />
+        <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px'}}>Vins</h2>
         <ModalImage
           small={image2}
           large={image2}
           hideZoom={true}
-          alt="Carta 2/2"
+          alt="Carta Vins"
         />
       </div>
     </div>

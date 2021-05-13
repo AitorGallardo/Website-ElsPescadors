@@ -42,12 +42,12 @@ const MenuEsp = () => {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="esp"/>
       <div>
-        <ModalImage
+        {/* <ModalImage
           small={image1}
           large={image1}
           hideZoom={true}
           alt="Carta 1/2"
-        />
+        /> */}
         <ModalImage
           small={image2}
           large={image2}
