@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import LanguageNav from "../../components/language_nav"
 import MenuLayout from "../../components/menuLayout"
-import MenuSuggestions from "../../components/menuSuggestions"
+import ModalImage from "react-modal-image";
 
 
 
@@ -57,7 +57,12 @@ const MenuDe = () => {
       <MenuLayout>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <LanguageNav selected="de" />
-          <MenuSuggestions menuImage={menuImage} suggestionsImage={suggestionsImage} options={options}/>
+          <ModalImage className="menu-image"
+            small={menuImage}
+            large={menuImage}
+            hideZoom={true}
+            alt={options.menuName}
+          />
         </div>
       </MenuLayout>
     </div>

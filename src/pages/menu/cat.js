@@ -34,10 +34,10 @@ const MenuCat = () => {
   let suggestionsImage = null;
 
   const options = {
-    menuName:'Menu',
-    suggestionsName:'Suggestions',
+    menuName:'Menú',
+    suggestionsName:'Suggeriments',
     imgAltMenu:'Carta',
-    imgAltWine:'Carta Vins',
+    imgAltWine:'Carta de Vins',
     isWine:'Vins'
   }
 
