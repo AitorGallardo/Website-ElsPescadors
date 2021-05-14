@@ -48,6 +48,7 @@ const MenuEsp = () => {
           hideZoom={true}
           alt="Carta 1/2"
         />
+        <h2 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px'}}>Vinos</h2>
         <ModalImage
           small={image2}
           large={image2}
