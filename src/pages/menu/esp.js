@@ -29,7 +29,7 @@ const MenuEsp = () => {
     let image2 = null
   
     data.allFile.edges.map(({node})=>{
-      if(node.base.includes('1')){
+      if(node.base.includes('menu')){
         image1 = node.childImageSharp.fluid.src;
       }else{
         image2 = node.childImageSharp.fluid.src;
@@ -42,12 +42,12 @@ const MenuEsp = () => {
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <LanguageNav selected="esp"/>
       <div>
-        {/* <ModalImage
+        <ModalImage
           small={image1}
           large={image1}
           hideZoom={true}
           alt="Carta 1/2"
-        /> */}
+        />
         <ModalImage
           small={image2}
           large={image2}
