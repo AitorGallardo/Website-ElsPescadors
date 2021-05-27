@@ -32,7 +32,7 @@ const MenuEsp = () => {
     let suggestionsImage = null;
   
     const options = {
-      menuName:'Menú',
+      menuName:'Carta',
       suggestionsName:'Sugerencias',
       imgAltMenu:'Carta',
       imgAltWine:'Carta de Vinos',
