@@ -12,7 +12,7 @@ const Footer = () => {
                     <div id="schedule">
                         <h4>Horari</h4>
                         <div id="schedule-contaier">
-                            <p>De 10:00h a 19:00h</p>
+                            <p>De 9:00h a 00:00h</p>
                             <p id="schedule-big-field">Tots els dies de la setmana</p>
                         </div>
                     </div>
