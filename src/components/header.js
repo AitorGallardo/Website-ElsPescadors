@@ -28,7 +28,7 @@ const LinksForHomePage = props => (
   <ul>
     <ScrollLink to="home-top-side">Inici</ScrollLink>
     <ScrollLink to="about">Nosaltres</ScrollLink>
-    <ListLink to="/menu/cat">Carta</ListLink>
+    {/* <ListLink to="/menu/cat">Carta</ListLink> */}
     <ScrollLink to="contact">Contacte</ScrollLink>
   </ul>
 )
@@ -37,7 +37,7 @@ const LinksForMenuPage = props => {
     <ul>
       <ListLink to="/">Inici</ListLink>
       <ListLink to="/" scrollId="about">Nosaltres</ListLink>
-      <ListLink to="/menu/cat" underline={true}>Carta</ListLink>
+      {/* <ListLink to="/menu/cat" underline={true}>Carta</ListLink> */}
       <ListLink to="/" scrollId="contact">Contacte</ListLink>
     </ul>
   )
