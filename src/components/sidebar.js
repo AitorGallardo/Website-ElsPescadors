@@ -40,7 +40,7 @@ const LinksForHomePage = props => (
     <>
         <ScrollLink to="home-top-side" icon_src={home_icon} icon_alt="Home Icon">Inici</ScrollLink>
         <ScrollLink to="about" icon_src={about_us_icon} icon_alt="About Icon">Nosaltres</ScrollLink>
-        {/* <ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink> */}
+        <ListLink to="/menu/cat" icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>
         <ScrollLink to="contact" icon_src={contact_icon} icon_alt="Contact Icon">Contacte</ScrollLink>
     </>
 );
@@ -48,7 +48,7 @@ const LinksForMenuPage = props => (
     <>
         <ListLink to="/" icon_src={home_icon} icon_alt="Home Icon">Inici</ListLink>
         <ListLink to="/" icon_src={about_us_icon} scrollId="about" icon_alt="About Icon">Nosaltres</ListLink>
-        {/* <ListLink to="/menu/cat" underline={true} icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink> */}
+        <ListLink to="/menu/cat" underline={true} icon_src={menu_icon} icon_alt="Menu Icon">Carta</ListLink>
         <ListLink to="/" icon_src={contact_icon} scrollId="contact" icon_alt="Contact Icon">Contacte</ListLink>
     </>
 );
