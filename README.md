@@ -8,13 +8,13 @@ Main purpose is to crate a digital menu for the restaurante accesible through va
 _[website](https://elspescadorspinedademar.cat)._
 
 <hr/>
-<div style="display:flex-inline">
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_eng.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;" src="./src/assets/qrs/qr_cat.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_esp.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_fr.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_ita.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_nl.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_de.png" width="80" heigh="80" />
-<img alt="Gatsby" style="margin: 40px;"  src="./src/assets/qrs/qr_ru.png" width="80" heigh="80" />
+<div style="display:flex-inline; gap: 20px; margin-top:40px">
+<img alt="Gatsby"   src="./src/assets/qrs/qr_eng.png" width="80" heigh="80" />
+<img alt="Gatsby"  src="./src/assets/qrs/qr_cat.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_esp.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_fr.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_ita.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_nl.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_de.png" width="80" heigh="80" />
+<img alt="Gatsby"   src="./src/assets/qrs/qr_ru.png" width="80" heigh="80" />
 </div>
